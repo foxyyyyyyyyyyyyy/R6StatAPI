@@ -6,6 +6,7 @@ import { GetUserProgressionQuery } from './application/GetUserProgressionQuery.j
 import { GetUserRankQuery } from './application/GetUserRankQuery.js';
 import { GetUserStatsQuery } from './application/GetUserStatsQuery.js';
 import { GetOperatorQuery } from './application/GetOperatorsQuery.js';
+import { GetUserInfoperIdQuery } from './application/GetUserInfoperIdQuery.js';
 
 class api {
   constructor() {
@@ -32,6 +33,10 @@ class api {
     this.GetUserRank = async (userId, platform) => {
       return await GetUserRankQuery(userId, platform);
     };
+
+    this.GetUserInfoperId = async (userId, platform) => {
+      return await GetUserInfoperIdQuery(userId, platform);
+    }
 
     this.GetUserStats = async (userId, platform, view, aggregation, gameMode, teamRole, season) => {
       return await GetUserStatsQuery(
